@@ -1,6 +1,6 @@
 package com.nurullahdemirci.StationRoute.entities.concretes;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,10 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,7 +31,7 @@ public class Route {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@NotNull
+	@NotNull(message="Name cannot be null!")
 	@Column(name="name")
 	private String name;
 	
@@ -44,6 +44,6 @@ public class Route {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="route")
-	private Set<RouteStation> routeStations;
+	private List<RouteStation> routeStations;
 	
 }

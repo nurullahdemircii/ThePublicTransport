@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nurullahdemirci.StationRoute.business.abstracts.UserService;
+import com.nurullahdemirci.StationRoute.core.dataAccess.UserDao;
+import com.nurullahdemirci.StationRoute.core.entities.User;
 import com.nurullahdemirci.StationRoute.core.utilities.results.DataResult;
 import com.nurullahdemirci.StationRoute.core.utilities.results.Result;
 import com.nurullahdemirci.StationRoute.core.utilities.results.SuccessDataResult;
 import com.nurullahdemirci.StationRoute.core.utilities.results.SuccessResult;
-import com.nurullahdemirci.StationRoute.dataAccess.abstracts.UserDao;
-import com.nurullahdemirci.StationRoute.entities.concretes.User;
 import com.nurullahdemirci.StationRoute.entities.dtos.UpdateUserDetailsDto;
 import com.nurullahdemirci.StationRoute.entities.dtos.UpdateUserPasswordDto;
 

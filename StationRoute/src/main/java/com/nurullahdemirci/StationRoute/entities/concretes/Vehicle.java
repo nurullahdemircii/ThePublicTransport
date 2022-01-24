@@ -8,8 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,11 +26,11 @@ public class Vehicle {
 	@Column(name="id")
 	private Integer id;
 	
-	@NotNull
+	@NotNull(message="Plate cannot be null!")
 	@Column(name="plate")
 	private String plate;
 	
-	@NotNull
+	@NotNull(message="Name cannat be null!")
 	@Column(name="name")
 	private String name;
 	
