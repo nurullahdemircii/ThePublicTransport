@@ -27,8 +27,6 @@ import com.nurullahdemirci.StationRoute.core.utilities.results.ErrorDataResult;
 import com.nurullahdemirci.StationRoute.entities.dtos.UpdateUserDetailsDto;
 import com.nurullahdemirci.StationRoute.entities.dtos.UpdateUserPasswordDto;
 
-
-
 @RestController
 @RequestMapping("api")
 public class UsersController {
@@ -69,7 +67,7 @@ public class UsersController {
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ErrorDataResult<Object> handleValidationException(MethodArgumentNotValidException exceptions){
-		Map<String, String> validationErrors = new HashMap<String, String>(); // Map<keyValue, errorMessage>
+		Map<String, String> validationErrors = new HashMap<String, String>();
 		for(FieldError fieldError : exceptions.getBindingResult().getFieldErrors()) {
 			validationErrors.put(fieldError.getField(), fieldError.getDefaultMessage());
 		}
